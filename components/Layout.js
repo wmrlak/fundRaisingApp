@@ -6,7 +6,7 @@ import Header from './Header';
 /**
  * Adjusts the layout of all the components
  *
- * @param props Contains the contents of the reatct components.
+ * @param props Contains the contents of a react component.
  * @returns {JSX.Element}
  * @constructor
  */

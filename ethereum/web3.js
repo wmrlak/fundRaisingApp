@@ -14,7 +14,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
     // We are on the next server (server side rendering might be happening) *OR*
     // the user is not running metamask. In any case, window variable is not available
     const provider = new Web3.providers.HttpProvider(
-        'https://sepolia.infura.io/v3/a887a7bde4ec4b2dbadc8182cbb5daa4'
+        'ADD YOUR INFURA ENTRY POINT HERE'
     );
     web3 = new Web3(provider);
 }
