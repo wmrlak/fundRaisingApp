@@ -1,16 +1,14 @@
+// We explicitly boot up next application and tell it to use routes.js
+// This file customizes next js to do extra operations
 
 
-//This file directs next js to use routes.js for navigation
-//when the app loads up. This file customizes next to do extra operations
-
-
-const { createServer } = require('http');
+const {createServer} = require('http');
 const next = require('next');
 
 //checks environment variable to see if next should run 
 //in dev or production mode
 const app = next({
-	dev: process.env.NODE_ENV !== 'production'
+    dev: process.env.NODE_ENV !== 'production'
 });
 
 
@@ -19,8 +17,8 @@ const handler = routes.getRequestHandler(app);
 
 //set up the app and make it listen to a specific port
 app.prepare().then(() => {
-	createServer(handler).listen(3000, (err) => {
-		if (err) throw err;
-		console.log('Ready on localhost:3000');
-	});
+    createServer(handler).listen(3000, (err) => {
+        if (err) throw err;
+        console.log('Ready on localhost:3000');
+    });
 });

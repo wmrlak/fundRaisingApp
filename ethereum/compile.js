@@ -1,5 +1,3 @@
-
-
 const path = require('path');
 const solc = require('solc');
 const fs = require('fs-extra');
@@ -16,19 +14,19 @@ const source = fs.readFileSync(campaignPath, 'utf8');
 
 //specify the expected JSON formatted input, specifying language, sources and output selection
 const input = {
-	language: "Solidity",
-	sources: {
-		"Campaign.sol": {
-			content: source,
-		},
-	},
-	settings: {
-		outputSelection: {
-			"*": {
-				"*": ["*"],
-			},
-		},
-	},
+    language: "Solidity",
+    sources: {
+        "Campaign.sol": {
+            content: source,
+        },
+    },
+    settings: {
+        outputSelection: {
+            "*": {
+                "*": ["*"],
+            },
+        },
+    },
 };
 
 //compile the source code using solc compiler, get the contracts property
@@ -43,8 +41,8 @@ fs.ensureDirSync(buildPath);
 
 //loop over output, get every contract and write it in the build folder in its own file
 for (let contract in output) {
-	fs.outputJsonSync(
-		path.resolve(buildPath, contract.replace(':','') + '.json'),
-		output[contract]
-	);
+    fs.outputJsonSync(
+        path.resolve(buildPath, contract.replace(':', '') + '.json'),
+        output[contract]
+    );
 }
